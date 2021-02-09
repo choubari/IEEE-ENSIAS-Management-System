@@ -31,35 +31,28 @@
                 </li>
             </ul>
             <ul class="navbar-nav nav-flex-icons">
-                <li class="nav-item mr-1 ${(not empty sessionScope.donnateur) || (not empty sessionScope.centre) ? 'd-none': ''}">
+                <li class="nav-item mr-1">
                     <a href="jsp/login.jsp"
                        class="nav-link border border-light rounded">
                         <i class="fas fa-sign-in-alt mr-2"></i>Sign in
                     </a>
                 </li>
-                <li class="nav-item mr-1 ${(not empty sessionScope.donnateur) || (not empty sessionScope.centre) ? 'd-none': ''}">
+                <li class="nav-item mr-1">
                     <a class="nav-link border-light">
                         or
                     </a>
                 </li>
 
-                <li class="nav-item ${(not empty sessionScope.donnateur) || (not empty sessionScope.centre)  ? 'd-none': ''}">
+                <li class="nav-item">
                     <a href="jsp/signup.jsp" class="nav-link border border-light rounded">
                         <i class="fas fa-user-plus"></i>Sign up
                     </a>
                 </li>
-                <li class="nav-item dropdown ${(empty sessionScope.donnateur) && (empty sessionScope.centre) ? 'd-none' : ''}">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
                         <i class="fas fa-user"></i> ${not empty sessionScope.donnateur.getNomDonnateur() ?
                             sessionScope.donnateur.getNomDonnateur() : sessionScope.centre.getNameCentre()} </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                        <c:if test="${not empty sessionScope.centre}">
-                            <a class="dropdown-item" href="/updateCentre?update=${sessionScope.centre.idCentre}">Update information</a>
-                        </c:if>
-                        <a class="dropdown-item ${(empty sessionScope.donnateur) ? 'd-none': ''}" href="profile">My account</a>
-                        <a class="dropdown-item" href="logout">Log out</a>
-                    </div>
                 </li>
 
             </ul>

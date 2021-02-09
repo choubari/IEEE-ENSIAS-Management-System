@@ -14,9 +14,9 @@
             <strong>Sign in</strong>
         </h5>
         <div class="card-body">
-            <form class="text-center border border-light p-3" method="post" action="login">
+            <form class="text-center border border-light p-3" method="post" action="LoginServlet">
                 <!-- Email -->
-                <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail"
+                <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Email"
                        name="email">
 
                 <!-- Password -->

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="java.sql.*"%>
 <html>
   <head>
     <%@ include file="jsp/HeaderHome.jsp"%>
@@ -18,6 +19,19 @@
     </style>
   </head>
   <body>
+      <h1>JDBC Connection</h1>
+
+<%
+  try {
+    java.sql.Connection con;
+    Class.forName("com.mysql.jdbc.Driver");
+    con = DriverManager.getConnection("jdbc:mysql://localhost/ieee_ensias?allowPublicKeyRetrieval=true&useSSL=false", "root", "choub");
+    out.println ("database successfully opened.");
+  }
+  catch(SQLException e) {
+    out.println("SQLException caught: " +e.getMessage());
+  }
+%>
   <%@ include file="jsp/NavbarIndex.jsp"%>
   <div class="view"
          style="background-image: url('./img/home-bg.png'); background-repeat: no-repeat; background-size: cover;">
@@ -37,7 +51,7 @@
           <a  href="jsp/login.jsp" class="btn btn-outline-white btn-lg">
             Sign in
           </a>
-          <a  href="/registre" class="btn btn-outline-white btn-lg ${(not empty sessionScope.donnateur) || (not empty sessionScope.centre) ? 'invisible': ''}">
+          <a  href="jsp/signup.jsp" class="btn btn-outline-white btn-lg ${(not empty sessionScope.donnateur) || (not empty sessionScope.centre) ? 'invisible': ''}">
             Sign up
           </a>
         </div>

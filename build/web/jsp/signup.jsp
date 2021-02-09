@@ -34,37 +34,37 @@
                         <strong>Sign Up</strong>
                     </h5>
                     <div class="card-body">
-                        <form method="post" action="#">
+                        <form method="post" action="addmember.jsp">
                             <div class="row row-space">
                                 <div class="form-group required col-sm-6">
                                     <label for="prenom" class='control-label'>First Name</label>
-                                    <input type="text" name="prenom" class="form-control" id="prenom" placeholder="First Name">
+                                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="John">
                                     <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                                 </div>
                                 <div class="form-group required col-sm-6">
                                     <label for="nom" class='control-label'>Last Name</label>
-                                    <input type="text" name="nom" class="form-control" id="nom" placeholder="Last Name">
+                                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Smith">
                                     <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group required col-sm-12">
-                                    <label for="cin" class='control-label'>Cin</label>
-                                    <input type="text" name="cin" class="form-control" id="cin" placeholder="CIN">
+                                    <label for="filliere" class='control-label'>Branch</label>
+                                    <input type="text" name="branch" class="form-control" id="branch" placeholder="ex : IWIM">
                                     <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class="form-group required col-sm-12">
                                     <label for="tele" class='control-label'>Phone Number</label>
-                                    <input type="text" name="tele" class="form-control" id="tele" placeholder="Phone Number">
+                                    <input type="text" name="phone" class="form-control" id="phone" placeholder="+212 6 07 00 00 00">
                                     <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group required col-sm-12">
                                     <label for="email" class='control-label'>Email</label>
-                                    <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="example@mail.com">
                                     <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                                 </div>
                             </div>
@@ -77,15 +77,25 @@
                             </div>
                             <div class="row row-space">
                                 <div class="form-group required col-sm-6">
-                                    <label  class="mt-4">Group Cell</label>
-                                    <select class="browser-default custom-select form-control">
-                                        <option selected value="">Choose Cell</option>
+                                    <label  class='control-label'>Cell</label>
+                                    <select class="browser-default custom-select form-control" name="cell">
+                                        <option value="" disabled selected>Select your desired cell</option>
+                                        <option value="Sponsoring">Sponsoring</option>
+                                        <option value="Event">Event</option>
+                                        <option value="Media">Media</option>
+                                        <option value="Tutorial">Tutorial</option>
+                                        <option value="Design">Design</option>                                        
                                     </select>
                                 </div>
                                 <div class="form-group required col-sm-6">
-                                    <label for="ville" class="mt-4">City</label>
-                                    <select class="browser-default custom-select form-control">
-                                        <option selected value="">Choisir ville</option>
+                                    <label class='control-label'>Promotion</label>
+                                    <select class="browser-default custom-select form-control" name="promo">
+                                        <option value="" disabled selected>Select your End of Studies year</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>  
                                     </select>
                                 </div>
                             </div>
