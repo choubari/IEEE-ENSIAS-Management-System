@@ -14,7 +14,7 @@
             <strong>Sign in</strong>
         </h5>
         <div class="card-body">
-            <form class="text-center border border-light p-3" method="post" action="LoginServlet">
+            <form class="text-center border border-light p-3" method="post" action="${pageContext.request.contextPath}/LoginServlet">
                 <!-- Email -->
                 <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Email"
                        name="email">

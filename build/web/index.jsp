@@ -19,20 +19,8 @@
     </style>
   </head>
   <body>
-      <h1>JDBC Connection</h1>
 
-<%
-  try {
-    java.sql.Connection con;
-    Class.forName("com.mysql.jdbc.Driver");
-    con = DriverManager.getConnection("jdbc:mysql://localhost/ieee_ensias?allowPublicKeyRetrieval=true&useSSL=false", "root", "choub");
-    out.println ("database successfully opened.");
-  }
-  catch(SQLException e) {
-    out.println("SQLException caught: " +e.getMessage());
-  }
-%>
-  <%@ include file="jsp/NavbarIndex.jsp"%>
+ <%@ include file="jsp/NavbarIndex.jsp"%>
   <div class="view"
          style="background-image: url('./img/home-bg.png'); background-repeat: no-repeat; background-size: cover;">
       <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
