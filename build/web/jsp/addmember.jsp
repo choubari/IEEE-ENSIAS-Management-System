@@ -10,9 +10,9 @@
 <%
     int i = MemberDao.save(u);
     if (i > 0) {
-        response.sendRedirect("../index.jsp");
-    } else {
         response.sendRedirect("login.jsp");
+    } else {
+        response.sendRedirect("../index.jsp");
     }
 %>  
 

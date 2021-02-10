@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark top-nav-collapse">
     <div class="container">
-        <a class="navbar-brand" href="../index.jsp"  >
-            <img src="../img/logo.png" style="height: 38px; margin-top: -2px;" class="mr-4">
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp"  >
+            <img src="${pageContext.request.contextPath}/img/logo.png" style="height: 38px; margin-top: -2px;" class="mr-4">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
@@ -27,7 +27,7 @@
                     <a class="nav-link" href="">About us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../jsp/contactUs.jsp">Contact us</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/jsp/contactUs.jsp">Contact us</a>
                 </li>
             </ul>
             <ul class="navbar-nav nav-flex-icons">
@@ -45,16 +45,11 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="../jsp/signup.jsp" class="nav-link border border-light rounded">
+                    <a href="${pageContext.request.contextPath}/jsp/signup.jsp" class="nav-link border border-light rounded">
                         <i class="fas fa-user-plus "></i>Sign up
                     </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false">
-                        <i class="fas fa-user"></i> </a>
-                </li>
-
+                
             </ul>
         </div>
     </div>

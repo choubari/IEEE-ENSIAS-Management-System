@@ -48,13 +48,7 @@
                         <i class="fas fa-user-plus"></i>Sign up
                     </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false">
-                        <i class="fas fa-user"></i> ${not empty sessionScope.donnateur.getNomDonnateur() ?
-                            sessionScope.donnateur.getNomDonnateur() : sessionScope.centre.getNameCentre()} </a>
-                </li>
-
+              
             </ul>
         </div>
     </div>

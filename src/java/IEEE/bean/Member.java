@@ -20,6 +20,11 @@ public class Member {
     private String firstname, lastname, password, email, phone, branch, cell, role; 
     private int promo;
 
+    public Member() {
+    }
+    
+    
+    
     public int getId() {
         return id;
     }

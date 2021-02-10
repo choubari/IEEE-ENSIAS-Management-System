@@ -55,7 +55,7 @@ public class MemberDao {
         try {
             Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement(
-                    "update member set member_first_name=?, member_last_name=?, member_email=?, member_password=?, member_tele=?, member_promo=?, member_branch=?, member_cellule=?, member_role=?  where id=?");
+                    "update member set member_first_name=?, member_last_name=?, member_email=?, member_password=?, member_tele=?, member_promo=?, member_branch=?, member_cellule=?, member_role=?  where member_id=?");
             ps.setString(1, u.getFirstname());
             ps.setString(2, u.getLastname());
             ps.setString(3, u.getEmail());
@@ -77,7 +77,7 @@ public class MemberDao {
         int status = 0;
         try {
             Connection con = getConnection();
-            PreparedStatement ps = con.prepareStatement("delete from member where id=?");
+            PreparedStatement ps = con.prepareStatement("delete from member where member_id=?");
             ps.setInt(1, u.getId());
             status = ps.executeUpdate();
         } catch (Exception e) {
@@ -96,16 +96,16 @@ public class MemberDao {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Member u = new Member();
-                u.setId(rs.getInt("id"));
-                u.setFirstname(rs.getString("firstname"));
-                u.setLastname(rs.getString("lastname"));
-                u.setEmail(rs.getString("email"));
-                u.setPassword(rs.getString("password"));
-                u.setPhone(rs.getString("phone"));
-                u.setPromo(rs.getInt("promo"));
-                u.setBranch(rs.getString("branch"));
-                u.setCell(rs.getString("cell"));
-                u.setRole(rs.getString("role"));
+                u.setId(rs.getInt("member_id"));
+                u.setFirstname(rs.getString("member_first_name"));
+                u.setLastname(rs.getString("member_last_name"));
+                u.setEmail(rs.getString("member_email"));
+                u.setPassword(rs.getString("member_password"));
+                u.setPhone(rs.getString("member_tele"));
+                u.setPromo(rs.getInt("member_promo"));
+                u.setBranch(rs.getString("member_branch"));
+                u.setCell(rs.getString("member_cellule"));
+                u.setRole(rs.getString("member_role"));
                 list.add(u);
             }
         } catch (Exception e) {
@@ -118,21 +118,47 @@ public class MemberDao {
         Member u = null;
         try {
             Connection con = getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from member where id=?");
+            PreparedStatement ps = con.prepareStatement("select * from member where member_id=?");
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 u = new Member();
-                u.setId(rs.getInt("id"));
-                u.setFirstname(rs.getString("firstname"));
-                u.setLastname(rs.getString("lastname"));
-                u.setEmail(rs.getString("email"));
-                u.setPassword(rs.getString("password"));
-                u.setPhone(rs.getString("phone"));
-                u.setPromo(rs.getInt("promo"));
-                u.setBranch(rs.getString("branch"));
-                u.setCell(rs.getString("cell"));
-                u.setRole(rs.getString("role"));
+                u.setId(rs.getInt("member_id"));
+                u.setFirstname(rs.getString("member_first_name"));
+                u.setLastname(rs.getString("member_last_name"));
+                u.setEmail(rs.getString("member_email"));
+                u.setPassword(rs.getString("member_password"));
+                u.setPhone(rs.getString("member_tele"));
+                u.setPromo(rs.getInt("member_promo"));
+                u.setBranch(rs.getString("member_branch"));
+                u.setCell(rs.getString("member_cellule"));
+                u.setRole(rs.getString("member_role"));
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return u;
+    }
+    public static Member getRecordByLogin(String email, String password) {
+        Member u = null;
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select * from member where member_email=? and member_password = ?");
+            ps.setString(1, email);
+            ps.setString(2, password);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                u = new Member();
+                u.setId(rs.getInt("member_id"));
+                u.setFirstname(rs.getString("member_first_name"));
+                u.setLastname(rs.getString("member_last_name"));
+                u.setEmail(rs.getString("member_email"));
+                u.setPassword(rs.getString("member_password"));
+                u.setPhone(rs.getString("member_tele"));
+                u.setPromo(rs.getInt("member_promo"));
+                u.setBranch(rs.getString("member_branch"));
+                u.setCell(rs.getString("member_cellule"));
+                u.setRole(rs.getString("member_role"));
             }
         } catch (Exception e) {
             System.out.println(e);
