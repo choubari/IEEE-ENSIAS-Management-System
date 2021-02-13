@@ -1,4 +1,4 @@
-<footer class="page-footer text-center font-small mt-4 wow fadeIn ">
+<footer class="page-footer text-center font-small mt-4 wow fadeIn " style="background-color: #006db6">
     <div class="pb-4 pt-4">
 
         <div class="pb-4">

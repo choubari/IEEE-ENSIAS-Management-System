@@ -24,6 +24,25 @@
 <!--- Contenue -->
 <div class="container col-md-8" style="margin-top: 100px;">
     
+ <c:if test="${not empty isInserted}">
+        <c:choose>
+            <c:when test="${isInserted == 'succes'}">
+                <h5 class='h5 text-center  mt-4'>
+                    <div class='alert alert-success'>Your Request is inserted, we will contact you by email for further information.</div>
+                </h5>
+            </c:when>
+            <c:when test="${isInserted == 'failure'}">
+                <h5 class="h5 text-center mt-4">
+                    <div class="alert alert-danger">Something goes wrong, Please try again.</div>
+                </h5>
+            </c:when>
+            <c:otherwise>
+                <h5 class="h5 text-center mt-4">
+                    <div class="alert alert-danger">Please complete all fields!</div>
+                </h5>
+            </c:otherwise>
+        </c:choose>
+    </c:if>
 
     <div class="row">
         <div class="col col-md-12">
@@ -34,7 +53,7 @@
                         <strong>Sign Up</strong>
                     </h5>
                     <div class="card-body">
-                        <form method="post" action="addmember.jsp">
+                        <form method="post" action="${pageContext.request.contextPath}/SignupServlet">
                             <div class="row row-space">
                                 <div class="form-group required col-sm-6">
                                     <label for="prenom" class='control-label'>First Name</label>

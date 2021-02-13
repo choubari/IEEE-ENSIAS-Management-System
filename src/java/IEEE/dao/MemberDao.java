@@ -72,6 +72,21 @@ public class MemberDao {
         }
         return status;
     }
+    public static int adminUpdate(int id,String role, String cell) {
+        int status = 0;
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement(
+                    "update member set member_cellule=?, member_role=?  where member_id=?");
+            ps.setString(1, cell);
+            ps.setString(2, role);
+            ps.setInt(3, id);
+            status = ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return status;
+    }
 
     public static int delete(Member u) {
         int status = 0;
@@ -113,7 +128,58 @@ public class MemberDao {
         }
         return list;
     }
+    public static List<Member> getActiveRecords() {
+        List<Member> list = new ArrayList<Member>();
 
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select * from member where member_role<>'inactif'");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Member u = new Member();
+                u.setId(rs.getInt("member_id"));
+                u.setFirstname(rs.getString("member_first_name"));
+                u.setLastname(rs.getString("member_last_name"));
+                u.setEmail(rs.getString("member_email"));
+                u.setPassword(rs.getString("member_password"));
+                u.setPhone(rs.getString("member_tele"));
+                u.setPromo(rs.getInt("member_promo"));
+                u.setBranch(rs.getString("member_branch"));
+                u.setCell(rs.getString("member_cellule"));
+                u.setRole(rs.getString("member_role"));
+                list.add(u);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return list;
+    }
+    public static List<Member> getInactiveRecords() {
+        List<Member> list = new ArrayList<Member>();
+
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select * from member where member_role='inactif' ");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Member u = new Member();
+                u.setId(rs.getInt("member_id"));
+                u.setFirstname(rs.getString("member_first_name"));
+                u.setLastname(rs.getString("member_last_name"));
+                u.setEmail(rs.getString("member_email"));
+                u.setPassword(rs.getString("member_password"));
+                u.setPhone(rs.getString("member_tele"));
+                u.setPromo(rs.getInt("member_promo"));
+                u.setBranch(rs.getString("member_branch"));
+                u.setCell(rs.getString("member_cellule"));
+                u.setRole(rs.getString("member_role"));
+                list.add(u);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return list;
+    }
     public static Member getRecordById(int id) {
         Member u = null;
         try {

@@ -49,6 +49,11 @@
             <!-- Default form login -->
         </div>
     </div>
+        <c:if test="${not empty msg}">
+        <p>
+            <div class="alert alert-danger">${msg}</div>
+        </p>
+    </c:if>
 </div>
 <%@include file="Footer.jsp"%>
 <%@include file="Toastr.jsp"%>

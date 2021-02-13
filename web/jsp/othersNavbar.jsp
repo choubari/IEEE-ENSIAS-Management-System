@@ -1,7 +1,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #006db6">
         <div class="container">
             <a class="navbar-brand">
-                <img src="${pageContext.request.contextPath}/img/logo.png" style="height: 38px; margin-top: -2px;" class="mr-4">
+                <img src="img/logo.png" style="height: 38px; margin-top: -2px;" class="mr-4">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=""
                     aria-controls="navbarSupportedContent"
@@ -14,15 +14,12 @@
                     <a class="nav-link" href="">Inbox</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/ShowMembers">Members</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="">Events</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">Tasks</a>
                 </li>
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="">Calendar</a>
                 </li>
                 <li class="nav-item">

@@ -17,8 +17,9 @@ import java.sql.SQLException;
  */
 public class LoginDao {
 
-    public boolean validate(LoginBean loginBean) throws ClassNotFoundException {
+    public int validate(LoginBean loginBean) throws ClassNotFoundException {
         boolean status = false;
+        int result=-1;
 
         Class.forName("com.mysql.jdbc.Driver");
 
@@ -30,16 +31,23 @@ public class LoginDao {
             .prepareStatement("select * from member where member_email = ? and member_password = ? ")) {
             preparedStatement.setString(1, loginBean.getEmail());
             preparedStatement.setString(2, loginBean.getPassword());
-
-            System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             status = rs.next();
-
+            String role = rs.getString("member_role");
+            System.out.println(rs.getString("member_role"));
+            if (status=true) {
+                if (role.equals("inactif")){
+                    result=0;
+                }else{
+                    result=1;
+                }
+            }
+            
         } catch (SQLException e) {
             // process sql exception
             printSQLException(e);
         }
-        return status;
+        return result;
     }
 
     private void printSQLException(SQLException ex) {

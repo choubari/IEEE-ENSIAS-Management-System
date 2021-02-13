@@ -8,6 +8,8 @@ import IEEE.dao.LoginDao;
 import IEEE.bean.LoginBean ;
 import IEEE.bean.Member;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -36,21 +38,31 @@ public class LoginServlet extends HttpServlet {
         LoginBean loginBean = new LoginBean();
         loginBean.setEmail(email);
         loginBean.setPassword(password);
-        
+        int result;
         try {
-            if (loginDao.validate(loginBean)) {
+            result = loginDao.validate(loginBean);
+            if (result==1) {
                 HttpSession session = request.getSession();
                 session.setAttribute("email",email);
                 session.setAttribute("password",password);
                 //response.sendRedirect("jsp/profile.jsp");
-                response.sendRedirect(request.getContextPath() + "/ProfileServlet");
+                response.sendRedirect(request.getContextPath() + "/RedirectionServlet");
             } else {
-                HttpSession session = request.getSession();
-                //session.setAttribute("user", username);
-                response.sendRedirect("jsp/login.jsp");
+                if (result==0){
+                    String msg = "Your account isn't active.";
+                    request.setAttribute("msg", msg);
+                    this.getServletContext().getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+                }else{
+                    String msg = "Invalid informations";
+                    request.setAttribute("msg", msg);
+                    this.getServletContext().getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+                    //HttpSession session = request.getSession();
+                    //response.sendRedirect("jsp/login.jsp");
+                }
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 }

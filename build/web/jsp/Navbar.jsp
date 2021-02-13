@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark top-nav-collapse">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark top-nav-collapse" style="background-color: #006db6">
     <div class="container">
         <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp"  >
             <img src="${pageContext.request.contextPath}/img/logo.png" style="height: 38px; margin-top: -2px;" class="mr-4">
