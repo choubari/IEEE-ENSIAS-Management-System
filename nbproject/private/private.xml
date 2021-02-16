@@ -3,20 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/adminDashBoard.jsp</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/adminNavBar.jsp</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/UpdateTask.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/bean/Task.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/adminMembersList.jsp</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/ShowMembers.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/CreateTask.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/loginNavbar.jsp</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/ShowTasks.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/profile.jsp</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/addmember.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/LoginServlet.java</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/HeaderHome.jsp</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/signup.jsp</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/Header.jsp</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/UpdateMember.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/TaskDao.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/RedirectionServlet.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/bean/Member.java</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/login.jsp</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/Events.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/index.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/MemberDao.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/TaskManagement.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/LoginDao.java</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/ProfileServlet.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/chefMembersList.jsp</file>
         </group>
     </open-files>
 </project-private>

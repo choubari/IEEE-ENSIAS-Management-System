@@ -13,14 +13,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="">Inbox</a>
                 </li>
+                <c:if test="${sessionScope.role != 'member' && sessionScope.role != 'webmaster'}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/ShowMembers">Members</a>
+                    </li>
+                </c:if>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/ShowMembers">Members</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/jsp/Events.jsp">Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Tasks</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/ShowTasks">Tasks</a>
                 </li>
                  <li class="nav-item">
                     <a class="nav-link" href="">Calendar</a>

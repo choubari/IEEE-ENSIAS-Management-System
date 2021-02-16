@@ -27,11 +27,22 @@ public class ShowMembers extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Member> inactive_members = MemberDao.getInactiveRecords();
-        List<Member> active_members = MemberDao.getActiveRecords();
-        request.setAttribute("active_members", active_members);
-        request.setAttribute("inactive_members", inactive_members);
-        this.getServletContext().getRequestDispatcher("/jsp/adminMembersList.jsp").forward(request, response);
+        String role = request.getSession().getAttribute("role").toString();
+        if (role.equals("admin")){
+            List<Member> inactive_members = MemberDao.getInactiveRecords();
+            List<Member> active_members = MemberDao.getActiveRecords();
+            request.setAttribute("active_members", active_members);
+            request.setAttribute("inactive_members", inactive_members);
+            this.getServletContext().getRequestDispatcher("/jsp/adminMembersList.jsp").forward(request, response);
+        }else{
+            if (role.equals("chef")){
+                int chefID = (int) request.getSession().getAttribute("ConnectedMemberID");
+                List<Member> cell_members= MemberDao.getMembersofCell(MemberDao.getCellofChef(chefID));
+                //System.out.println(" list  "+cell_members);
+                request.setAttribute("cell_members", cell_members);
+                this.getServletContext().getRequestDispatcher("/jsp/chefMembersList.jsp").forward(request, response);   
+            }
+        }
         
     }
 

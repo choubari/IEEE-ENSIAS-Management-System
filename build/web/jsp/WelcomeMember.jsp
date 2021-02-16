@@ -20,7 +20,7 @@
 </head>
 <body>
 
-<%@include file="othersNavbar.jsp"%>
+<%@ include file="/jsp/loginNavbar.jsp" %>
 <div class="container col-md-8" style="margin-top: 100px;">
 <h1>Welcome Member!</h1>
 <h1>Welcome Member!</h1>

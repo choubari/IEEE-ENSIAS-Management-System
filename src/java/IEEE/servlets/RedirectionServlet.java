@@ -28,6 +28,7 @@ public class RedirectionServlet extends HttpServlet {
         request.setAttribute("member", member);
         HttpSession session = request.getSession();
         session.setAttribute("role",member.getRole());
+        session.setAttribute("ConnectedMemberID",member.getId());
         if(member.getRole().equals("admin")){
             this.getServletContext().getRequestDispatcher("/jsp/WelcomeAdmin.jsp").forward(request, response);
         }else{

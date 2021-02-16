@@ -23,14 +23,7 @@
     <body>
        
         <!--- Navbar -->
-        <c:choose>
-            <c:when test="${sessionScope.role == 'admin'}">
-                <%@ include file="/jsp/adminNavBar.jsp" %>
-            </c:when>
-            <c:otherwise>
-                <%@ include file="/jsp/othersNavbar.jsp" %>
-            </c:otherwise>
-        </c:choose>
+        <%@ include file="/jsp/loginNavbar.jsp" %>
         
         
         

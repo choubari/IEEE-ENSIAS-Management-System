@@ -22,7 +22,7 @@
     <%@include file="Header.jsp"%>
 </head>
 <body>
-    <%@include file="adminNavBar.jsp"%>
+    <%@include file="loginNavbar.jsp"%>
 <%
 List<Member> active_members = (List) request.getAttribute("active_members");
 List<Member> inactive_members = (List) request.getAttribute("inactive_members");
@@ -30,8 +30,12 @@ List<Member> inactive_members = (List) request.getAttribute("inactive_members");
     <div class="container col-md-8  pt-5 ">
     <br><br>
 
-  <div class="col-md-3"><a href="" data-toggle="modal" data-target="#updateModal" class="btn btn-warning">Update Member</a></div>
-  <!-- Alerts -->
+    <div class="row mt-5">
+        <div class="col-md-3"><a href="" data-toggle="modal" data-target="#updateModal" class="btn btn-warning">Update Member</a></div>
+        <div class="col-md-3"><a href="" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger">Delete Member</a></div>
+    </div>
+  
+    <!-- Alerts -->
             <c:if test="${MessageSuccess ne null}">
                 <div class="alert alert-success" role="alert">
                     ${MessageSuccess}
@@ -184,3 +188,32 @@ List<Member> inactive_members = (List) request.getAttribute("inactive_members");
         </div>
     </div>
 </div>
+
+<!-- Delete -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Delete Member</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="get" action="${pageContext.request.contextPath}/DeleteMember">
+                <div class="modal-body mx-3">
+                    <div class="row ">
+                        <div class="form-group required col-sm-12">
+                            <label for="id" class='control-label'>Id</label>
+                            <input type="text" name="id" class="form-control" id="id" placeholder="Member Identifiant">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <input type="submit" class="btn btn-danger" value="Delete"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+           

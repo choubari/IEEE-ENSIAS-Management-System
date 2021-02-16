@@ -1,0 +1,137 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<style>
+    .form-group.required .control-label:after {
+        content:" *";
+        color:red;
+    }
+    .form-control:focus {
+        border-color: #006db6;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+    }
+    select option:hover {
+        background: #006db6;
+        color: white;
+    }
+</style>
+<html>
+    <head>
+        <%@include file="Header.jsp"%>
+    </head>
+    <body>
+        
+        <!--- Navbar -->
+        <%@ include file="/jsp/loginNavbar.jsp" %>
+        
+      <div class="container col-md-8" style="margin-top: 100px;">
+
+
+    <div class="row">
+        <div class="col col-md-12">
+
+            <div class="wrapper wrapper--w790">
+                <div class="card">
+                    <h5 class="card-header white-text text-center py-4" style="background-color: #8B191C;">
+                        <strong>Create Event</strong>
+                    </h5>
+                    <div class="card-body">
+                        <c:if test="${flashMessageFaild ne null}">
+                            <div class="alert alert-danger" role="alert">
+                                    ${flashMessageFaild}
+                            </div>
+                        </c:if>
+                        <form method="post" action="/addEvent" enctype="multipart/form-data">
+                            <div class="row row-space">
+                                <div class="form-group required col-sm-12">
+                                    <label for="title" class='control-label'>Event title</label>
+                                    <input type="text" name="title" class="form-control" id="title" placeholder="Event title" <c:if test="${oldTitle ne null}"> value="${oldTitle}" </c:if> >
+                                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="form-group required col-sm-12">
+                                    <label for="description" class='control-label'>Event Description</label>
+                                    <textarea class="form-control" id="description" name="description" rows="7" placeholder="Event Description"><c:if test="${oldDescription ne null}">${oldDescription}</c:if></textarea>
+                                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="form-group required col-sm-12">
+                                    <label for="date" class='control-label'>Event Date</label>
+                                    <input type="date" name="date" class="form-control" id="date" <c:if test="${oldDate ne null}"> value="${oldDate}" </c:if>>
+                                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="form-group required col-sm-12">
+                                    <label for="time" class='control-label'>Event time</label>
+                                    <input type="time" name="time" class="form-control" id="time" <c:if test="${oldTime ne null}"> value="${oldTime}" </c:if>>
+                                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                </div>
+                            </div>
+                            <%--<div class="row">--%>
+                                <%--<div class="form-group required col-sm-12">--%>
+                                    <%--<div class="custom-file">--%>
+                                        <%--<input type="file" class="custom-file-input" id="imgInput" name="imgInput"--%>
+                                               <%--aria-describedby="imgInput">--%>
+                                        <%--<label class="custom-file-label" for="imgInput">Photo de couverture d'evenement</label>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                            <div class="form-group required col-sm-12 custom-file ">
+                                <input type="file" class="custom-file-input" id="imgInput" name="imgInput"
+                                       aria-describedby="imgInput" required>
+                                <label class="custom-file-label " for="imgInput">Event image cover </label>
+                            </div>
+                            <%--<div class="row">--%>
+                                <%--<div class="form-group required col-sm-12">--%>
+                                    <%--<label for="password" class='control-label'>Password</label>--%>
+                                    <%--<input type="password" name="password" class="form-control" id="password" placeholder="Password">--%>
+                                    <%--<!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                            <%--<div class="row row-space">--%>
+                                <%----%>
+                                <%--<div class="form-group required col-sm-12">--%>
+                                    <%--<label for="ville" class="mt-4">City</label>--%>
+                                    <%--<select class="browser-default custom-select form-control" name="ville" id="ville">--%>
+                                        <%--<option selected value="">Choisir ville</option>--%>
+                                        <%--<c:forEach items="${villes}" var="ville">--%>
+                                            <%--<option value="<c:out value="${ville.idVille}"/>" <c:if test="${oldVille eq ville.idVille}"> selected="" </c:if> ><c:out value="${ville.nomVille}"/></option>--%>
+                                        <%--</c:forEach>--%>
+                                    <%--</select>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                            <!-- Submit -->
+                            <div class="row">
+                                <div class="form-group col-sm-4">
+                                    <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"
+                                            type="submit" style="border-color: #D92228 !important; color: #D92228 !important;">
+                                        Create
+                                    </button>
+                                </div>
+
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+ <%@include file="Footer.jsp"%>  
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

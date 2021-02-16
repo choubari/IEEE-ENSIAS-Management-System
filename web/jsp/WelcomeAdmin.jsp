@@ -19,8 +19,7 @@
     </style>
 </head>
 <body>
-
-<%@include file="adminNavBar.jsp"%>
+<%@ include file="/jsp/loginNavbar.jsp" %>
 <div class="container col-md-8" style="margin-top: 100px;">
 <h1>Welcome Admin!</h1>
 
