@@ -32,10 +32,12 @@ DROP TABLE IF EXISTS `event`;
 CREATE TABLE IF NOT EXISTS `event` (
   `event_id` int(11) NOT NULL AUTO_INCREMENT,
   `event_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `event_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `event_description` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `event_date` date NOT NULL,
+  `event_time` time NOT NULL,
   `event_guests` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `event_flyer` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `event_status` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`event_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

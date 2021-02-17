@@ -19,7 +19,7 @@
                     </li>
                 </c:if>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/jsp/Events.jsp">Events</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/ShowEvents">Events</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/ShowTasks">Tasks</a>
@@ -28,7 +28,7 @@
                     <a class="nav-link" href="">Calendar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Datacenter</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/jsp/Datacenter.jsp">Datacenter</a>
                 </li>
                
             </ul>

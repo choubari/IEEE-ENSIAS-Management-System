@@ -1,8 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="IEEE.bean.Event"%>
-<%@ page import ="java.util.ArrayList"%>
-<%@ page import ="java.util.List"%>
-
 <style>
     .form-group.required .control-label:after {
         content:" *";
@@ -23,20 +19,12 @@
     </head>
     <body>
         <%@include file="loginNavbar.jsp"%>
-        <%
-            List<Event> eventslist = (List) request.getAttribute("eventslist");
-        %>
         <div class="container col-md-8  pt-5 ">
             <br><br>
             <c:if test="${sessionScope.role != 'member' && sessionScope.role != 'webmaster'}">
                 <div class="row mt-5">
-                    <div class="col-md-3 offset-2">
-                        <a href="${pageContext.request.contextPath}/jsp/EventDetails.jsp" >
-                            <button class="btn btn-success" type="submit">Create Event</button>
-                        </a>
-                    </div>
-                    <div class="col-md-3"><a href="" data-toggle="modal" data-target="#updateModal" class="btn btn-warning">Update Event</a></div>
-                    <div class="col-md-3"><a href="" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger">Delete Event</a></div>
+                   <div class="col-md-3"><a href="" data-toggle="modal" data-target="#addModal" class="btn btn-success">Add File</a></div>
+                   <div class="col-md-3"><a href="" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger">Delete File</a></div>
                 </div>
             </c:if>
 
@@ -53,39 +41,35 @@
                 </div>
             </c:if>
 
-            <!-- List of members --> 
+            <!-- List of files --> 
             <div class="card card-cascade wider reverse mt-5">
                 <!-- Card content -->
                 <div class="card-body card-body-cascade">
                     <!-- Title -->
                     <div class="section-title text-center wow zoomInfont-weight-bold">
-                        <h1>List of Events</h1>
+                        <h1>List of Files</h1>
                     </div>
                     <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Guests</th>
+                                <th scope="col">File</th>
                                 <th scope="col">Date</th>
                                 <th scope="col">Time</th>
-                                <th scope="col">Flyer</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">Uploaded by</th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach items="${eventslist}" var="event">
+                            <c:forEach items="${files}" var="file">
                                 <tr>
-                                    <th scope="row"><c:out value="${event.id}"/></th>
-                                    <th scope="row"><c:out value="${event.name}"/></th>
-                                    <th scope="row"><c:out value="${event.description}"/></th>
-                                    <th scope="row"><c:out value="${event.guests}"/></th>
-                                    <th scope="row"><c:out value="${event.date}"/></th>
-                                    <th scope="row"><c:out value="${event.time}"/></th>
-                                    <th scope="row"><a href="${pageContext.request.contextPath}/DownloadServlet?fileName=${event.imagePath}" ><c:out value="${event.imagePath}"/></a></th>
-                                    <th scope="row"><c:out value="${event.status}"/></th>
+                                    <th scope="row"><c:out value="${file.id}"/></th>
+                                    <th scope="row"><c:out value="${file.name}"/></th>
+                                    <th scope="row"><a href="${pageContext.request.contextPath}/DownloadServlet?fileName=${file.path}" ><c:out value="${file.path}"/></a></th>
+                                    <th scope="row"><c:out value="${file.date}"/></th>
+                                    <th scope="row"><c:out value="${file.time}"/></th>
+                                    <th scope="row"><c:out value="${file.owner}"/></th>
                                     <th scope="row">
                                 </tr>
                             </c:forEach>
@@ -100,30 +84,28 @@
 </html>
 
 
-
-
-<!-- Update -->
-<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<!-- Add -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Update Event</h4>
+                <h4 class="modal-title w-100 font-weight-bold">Add File</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="get" action="${pageContext.request.contextPath}/AddEvent">
+            <form method="get" action="${pageContext.request.contextPath}/AddFile">
                 <div class="modal-body mx-3">
                     <div class="row ">
                         <div class="form-group required col-sm-12">
                             <label for="eventid" class='control-label'>Id</label>
-                            <input type="text" name="eventid" class="form-control" id="id" placeholder="Event Identifiant">
+                            <input type="text" name="fileid" class="form-control" id="id" placeholder="Event Identifiant">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <input type="submit" class="btn btn-warning" value="Update"/>
+                    <input type="submit" class="btn btn-success" value="Add"/>
                 </div>
             </form>
             </form>
@@ -138,17 +120,17 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Delete Member</h4>
+                <h4 class="modal-title w-100 font-weight-bold">Delete File</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="get" action="${pageContext.request.contextPath}/DeleteEvent">
+            <form method="get" action="${pageContext.request.contextPath}/DeleteFile">
                 <div class="modal-body mx-3">
                     <div class="row ">
                         <div class="form-group required col-sm-12">
                             <label for="eventid" class='control-label'>Id</label>
-                            <input type="text" name="eventid" class="form-control" id="id" placeholder="Event Identifiant">
+                            <input type="text" name="fileid" class="form-control" id="id" placeholder="Event Identifiant">
                         </div>
                     </div>
                 </div>
