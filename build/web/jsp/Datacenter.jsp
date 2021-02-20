@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="IEEE.bean.Datacenter"%>
+<%@ page import ="java.util.ArrayList"%>
+<%@ page import ="java.util.List"%>
 <style>
     .form-group.required .control-label:after {
         content:" *";
@@ -21,13 +24,14 @@
         <%@include file="loginNavbar.jsp"%>
         <div class="container col-md-8  pt-5 ">
             <br><br>
-            <c:if test="${sessionScope.role != 'member' && sessionScope.role != 'webmaster'}">
                 <div class="row mt-5">
-                   <div class="col-md-3"><a href="" data-toggle="modal" data-target="#addModal" class="btn btn-success">Add File</a></div>
-                   <div class="col-md-3"><a href="" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger">Delete File</a></div>
+                    <div class="col-md-3"><a href="" data-toggle="modal" data-target="#addFile" class="btn btn-success">Add File</a></div>
+                    <div class="col-md-3"><a href="" data-toggle="modal" data-target="#deleteFile" class="btn btn-danger">Delete File</a></div>
                 </div>
-            </c:if>
-
+            
+        <%
+           List<Datacenter> files = (List) request.getAttribute("files");
+        %>
             <!-- Alerts -->
             <c:if test="${MessageSuccess ne null}">
                 <div class="alert alert-success" role="alert">
@@ -69,7 +73,7 @@
                                     <th scope="row"><a href="${pageContext.request.contextPath}/DownloadServlet?fileName=${file.path}" ><c:out value="${file.path}"/></a></th>
                                     <th scope="row"><c:out value="${file.date}"/></th>
                                     <th scope="row"><c:out value="${file.time}"/></th>
-                                    <th scope="row"><c:out value="${file.owner}"/></th>
+                                    <th scope="row"><c:out value="${file.ownername}"/></th>
                                     <th scope="row">
                                 </tr>
                             </c:forEach>
@@ -85,8 +89,7 @@
 
 
 <!-- Add -->
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="addFile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
@@ -95,12 +98,21 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="get" action="${pageContext.request.contextPath}/AddFile">
+            <form method="post" action="${pageContext.request.contextPath}/AddFile" enctype="multipart/form-data">
                 <div class="modal-body mx-3">
                     <div class="row ">
                         <div class="form-group required col-sm-12">
-                            <label for="eventid" class='control-label'>Id</label>
-                            <input type="text" name="fileid" class="form-control" id="id" placeholder="Event Identifiant">
+                            <label for="name" class='control-label'>Name</label>
+                            <input type="text" name="name" class="form-control" id="id" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="form-group required col-sm-12"> 
+                            <div class="form-group required col-sm-12 custom-file ">
+                                <input type="file" class="custom-file-input" id="file" name="filepath"
+                                       aria-describedby="file" required>
+                                <label class="custom-file-label " for="filepath">File</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -108,14 +120,13 @@
                     <input type="submit" class="btn btn-success" value="Add"/>
                 </div>
             </form>
-            </form>
         </div>
     </div>
 </div>
 
 
 <!-- Delete -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="deleteFile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -129,8 +140,8 @@
                 <div class="modal-body mx-3">
                     <div class="row ">
                         <div class="form-group required col-sm-12">
-                            <label for="eventid" class='control-label'>Id</label>
-                            <input type="text" name="fileid" class="form-control" id="id" placeholder="Event Identifiant">
+                            <label for="fileid" class='control-label'>Id</label>
+                            <input type="text" name="fileid" class="form-control" id="id" placeholder="File Identifiant">
                         </div>
                     </div>
                 </div>

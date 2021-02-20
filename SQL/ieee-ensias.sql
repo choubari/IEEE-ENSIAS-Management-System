@@ -44,6 +44,24 @@ CREATE TABLE IF NOT EXISTS `event` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `datacenter`
+--
+
+DROP TABLE IF EXISTS `datacenter`;
+CREATE TABLE IF NOT EXISTS `datacenter` (
+  `file_id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file_path` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file_date` date NOT NULL,
+  `file_time` time NOT NULL,
+  `file_ownerid` int(11) NOT NULL,
+  FOREIGN KEY (`file_ownerid`) REFERENCES member(`member_id`),
+  PRIMARY KEY (`file_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `member`
 --
 

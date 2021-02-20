@@ -28,7 +28,7 @@
                     <a class="nav-link" href="">Calendar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/jsp/Datacenter.jsp">Datacenter</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/DatacenterServlet">Datacenter</a>
                 </li>
                
             </ul>

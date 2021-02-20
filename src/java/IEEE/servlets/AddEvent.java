@@ -78,15 +78,15 @@ public class AddEvent extends HttpServlet {
             this.getServletContext().getRequestDispatcher("/ShowEvents").forward(request, response);
             //doGet(request, response);
         }else{
-            System.out.println("Hello2");
-            System.out.println(fileName);
+            //System.out.println("Hello2");
+            //System.out.println(fileName);
             String error="";
             error=validationChamp(fileName,"[^\\s]+(\\.(?i)(jpg|png|gif|bmp))$","Please choose file with (.png, .jpg, .gif, .bmp) extension.");
             if(error!=""){
                 request.setAttribute("MessageFaild",error);
                 this.getServletContext().getRequestDispatcher("/ShowEvents").forward(request, response);
             }else{
-                System.out.println("Hello3");
+                //System.out.println("Hello3");
                 if(!fileName.isEmpty() && fileName!=null){
                         writeFile(part,fileName,"C:\\Users\\Admin CH\\Documents\\GitHub\\IEEE-ENSIAS\\web\\img\\uploads");
                 }

@@ -5,8 +5,8 @@
  */
 package IEEE.servlets;
 
-import IEEE.bean.Event;
-import IEEE.dao.EventDao;
+import IEEE.bean.Datacenter;
+import IEEE.dao.DatacenterDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -20,28 +20,29 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author AdminCH
  */
-@WebServlet(name = "ShowEvents", urlPatterns = {"/ShowEvents"})
-public class ShowEvents extends HttpServlet {
+@WebServlet(name = "DatacenterServlet", urlPatterns = {"/DatacenterServlet"})
+public class DatacenterServlet extends HttpServlet {
 
-   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       List<Event> eventslist = EventDao.getAllEvents();
-       System.out.println("events list :"+eventslist);
-       request.setAttribute("eventslist", eventslist);
-       this.getServletContext().getRequestDispatcher("/jsp/Events.jsp").forward(request, response);
-      
+       List<Datacenter> files = DatacenterDao.getAllFiles();
+       System.out.println(files);
+       request.setAttribute("files", files);
+       this.getServletContext().getRequestDispatcher("/jsp/Datacenter.jsp").forward(request, response);
+       
     }
 
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Event> eventslist = EventDao.getAllEvents();
-       System.out.println("events list :"+eventslist);
-       request.setAttribute("eventslist", eventslist);
-       this.getServletContext().getRequestDispatcher("/jsp/Events.jsp").forward(request, response);
+        List<Datacenter> files = DatacenterDao.getAllFiles();
+       System.out.println(files);
+       request.setAttribute("files", files);
+       this.getServletContext().getRequestDispatcher("/jsp/Datacenter.jsp").forward(request, response);
+       
     }
 
+   
 }

@@ -8,7 +8,7 @@
             <a href="#"><i class="fa fa-instagram mr-3"></i></a>
         </div>
         <div class="footer-copyright py-3">
-            2020 Copyright.
+            2021 Copyright.
             <a href="/">
                 IEEE ENSIAS Student Branch
             </a>
