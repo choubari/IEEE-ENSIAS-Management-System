@@ -84,7 +84,7 @@
                                     <th scope="row"><c:out value="${event.guests}"/></th>
                                     <th scope="row"><c:out value="${event.date}"/></th>
                                     <th scope="row"><c:out value="${event.time}"/></th>
-                                    <th scope="row"><a href="${pageContext.request.contextPath}/DownloadServlet?fileName=${event.imagePath}" ><c:out value="${event.imagePath}"/></a></th>
+                                    <th scope="row" style="text-decoration: underline;"><a href="${pageContext.request.contextPath}/DownloadServlet?fileName=${event.imagePath}" ><c:out value="${event.imagePath}" /></a></th>
                                     <th scope="row"><c:out value="${event.status}"/></th>
                                     <th scope="row">
                                 </tr>

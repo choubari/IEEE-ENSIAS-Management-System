@@ -8,9 +8,9 @@
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/ShowMembers.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/CreateTask.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/DatacenterDao.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/profile.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/ShowTasks.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/DownloadServlet.java</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/profile.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/EventDetails.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/bean/Datacenter.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/UpdateMember.java</file>
@@ -20,9 +20,9 @@
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/Events.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/ShowEvents.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/UpdateTask.java</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/adminMembersList.jsp</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/DeleteFile.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/loginNavbar.jsp</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/DeleteEvent.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/AddFile.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/TaskDao.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/EventDao.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/AddEvent.java</file>

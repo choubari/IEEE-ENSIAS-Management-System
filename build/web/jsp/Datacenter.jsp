@@ -26,7 +26,9 @@
             <br><br>
                 <div class="row mt-5">
                     <div class="col-md-3"><a href="" data-toggle="modal" data-target="#addFile" class="btn btn-success">Add File</a></div>
-                    <div class="col-md-3"><a href="" data-toggle="modal" data-target="#deleteFile" class="btn btn-danger">Delete File</a></div>
+                    <c:if test="${sessionScope.role != 'member' && sessionScope.role != 'webmaster'}">
+                        <div class="col-md-3"><a href="" data-toggle="modal" data-target="#deleteFile" class="btn btn-danger">Delete File</a></div>
+                    </c:if>
                 </div>
             
         <%
@@ -70,7 +72,7 @@
                                 <tr>
                                     <th scope="row"><c:out value="${file.id}"/></th>
                                     <th scope="row"><c:out value="${file.name}"/></th>
-                                    <th scope="row"><a href="${pageContext.request.contextPath}/DownloadServlet?fileName=${file.path}" ><c:out value="${file.path}"/></a></th>
+                                    <th scope="row" style="text-decoration: underline;"><a href="${pageContext.request.contextPath}/DownloadServlet?fileName=${file.path}" ><c:out value="${file.path}"/></a></th>
                                     <th scope="row"><c:out value="${file.date}"/></th>
                                     <th scope="row"><c:out value="${file.time}"/></th>
                                     <th scope="row"><c:out value="${file.ownername}"/></th>

@@ -25,7 +25,7 @@
                     <a class="nav-link" href="${pageContext.request.contextPath}/ShowTasks">Tasks</a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="">Calendar</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/jsp/Calendar.jsp">Calendar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/DatacenterServlet">Datacenter</a>
