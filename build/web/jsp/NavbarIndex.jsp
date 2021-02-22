@@ -30,26 +30,46 @@
                     <a class="nav-link" href="jsp/contactUs.jsp">Contact us</a>
                 </li>
             </ul>
-            <ul class="navbar-nav nav-flex-icons">
-                <li class="nav-item mr-1">
-                    <a href="jsp/login.jsp"
-                       class="nav-link border border-light rounded">
-                        <i class="fas fa-sign-in-alt mr-2"></i>Sign in
-                    </a>
-                </li>
-                <li class="nav-item mr-1">
-                    <a class="nav-link border-light">
-                        or
-                    </a>
-                </li>
+            <c:choose>
+                <c:when test="${sessionScope.role !=null}">
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                <i class="fas fa-user"></i> ${sessionScope.role} </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/ProfileServlet">Profile</a>
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/LogoutServlet">Log out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </c:when>
+                <c:otherwise>
 
-                <li class="nav-item">
-                    <a href="jsp/signup.jsp" class="nav-link border border-light rounded">
-                        <i class="fas fa-user-plus"></i>Sign up
-                    </a>
-                </li>
-              
-            </ul>
+
+
+                    <ul class="navbar-nav nav-flex-icons">
+                        <!-- to set button invisible if the user is connected -->
+                        <li class="nav-item mr-1">
+                            <a href="${pageContext.request.contextPath}/jsp/login.jsp"
+                               class="nav-link border border-light rounded">
+                                <i class="fas fa-sign-in-alt mr-2"></i>Sign in
+                            </a>
+                        </li>
+                        <li class="nav-item mr-1">
+                            <a class="nav-link border-light">
+                                or
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="${pageContext.request.contextPath}/jsp/signup.jsp" class="nav-link border border-light rounded">
+                                <i class="fas fa-user-plus "></i>Sign up
+                            </a>
+                        </li>
+                    </ul>
+                </c:otherwise>
+            </c:choose>
         </div>
     </div>
 </nav>
