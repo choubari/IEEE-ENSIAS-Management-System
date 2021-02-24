@@ -62,6 +62,26 @@ CREATE TABLE IF NOT EXISTS `datacenter` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `chat`
+--
+
+DROP TABLE IF EXISTS `chat`;
+CREATE TABLE IF NOT EXISTS `chat` (
+  `chat_id` int(11) NOT NULL AUTO_INCREMENT,
+  `chat_from` int(11) NOT NULL,
+  `chat_to` int(11) NOT NULL,
+  `chat_content` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chat_date` date NOT NULL,
+  `chat_time` time NOT NULL,
+  FOREIGN KEY (`chat_from`) REFERENCES member(`member_id`),
+  FOREIGN KEY (`chat_to`) REFERENCES member(`member_id`),
+  PRIMARY KEY (`chat_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `member`
 --
 

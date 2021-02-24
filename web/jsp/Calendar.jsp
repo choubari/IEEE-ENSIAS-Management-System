@@ -27,7 +27,7 @@
 </style>
 <html>
     <head>
-        <<%@include file="Header.jsp"%>
+        <%@include file="Header.jsp"%>
         
         <link href='${pageContext.request.contextPath}/css/fullcalendar.css' rel='stylesheet' />
         <link href='${pageContext.request.contextPath}/css/fullcalendar.print.css' rel='stylesheet' media='print' />
@@ -35,7 +35,6 @@
         <script src='${pageContext.request.contextPath}/js/jquery.min.js'></script>
         
         <script src='${pageContext.request.contextPath}/js/fullcalendar.min.js'></script>
-        <script src='${pageContext.request.contextPath}/js/fullcalendar.js'></script>
         
         <script>
             $(document).ready(function() {

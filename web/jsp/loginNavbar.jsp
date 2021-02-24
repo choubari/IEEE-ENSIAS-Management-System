@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto"> 
                 <li class="nav-item">
-                    <a class="nav-link" href="">Inbox</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/ChatServlet">Chat</a>
                 </li>
                 <c:if test="${sessionScope.role != 'member' && sessionScope.role != 'webmaster'}">
                     <li class="nav-item">
