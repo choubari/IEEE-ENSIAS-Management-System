@@ -95,7 +95,7 @@
                         </tbody>
                     </table>
 
-                    <c:if test="${sessionScope.role != 'member'}">             
+                    <c:if test="${sessionScope.role != 'member' && sessionScope.role != 'webmaster'}">             
                         <div class="section-title text-center wow zoomInfont-weight-bold">
                             <h1>Delegated Tasks</h1>
                         </div>
