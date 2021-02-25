@@ -30,7 +30,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/DatacenterServlet">Datacenter</a>
                 </li>
-               
+               <c:if test="${sessionScope.role == 'webmaster'}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/ShowStats">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/ContactForm">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/ShowNewsletter">Newsletter</a>
+                    </li>
+                </c:if>
+                
             </ul>
             <ul class="navbar-nav nav-flex-icons">
                 <li class="nav-item dropdown">

@@ -272,4 +272,102 @@ public class MemberDao {
         }
         return u;
     }
+    public static int getCountInactifMembers() {
+        int u = 0;
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select count(*)as total from member where member_role='inactif'");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                u=rs.getInt("total");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return u;
+    }
+    public static int getCountInactifEvent() {
+        int u = 0;
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select count(*)as total from member where member_role='inactif' and member_cellule='event'");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                u=rs.getInt("total");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return u;
+    }
+    public static int getCountInactifDesign() {
+        int u = 0;
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select count(*)as total from member where member_role='inactif' and member_cellule='design'");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                u=rs.getInt("total");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return u;
+    }
+    public static int getCountInactifTutorial() {
+        int u = 0;
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select count(*)as total from member where member_role='inactif' and member_cellule='tutorial'");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                u=rs.getInt("total");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return u;
+    }
+    public static int getCountInactifSponsoring() {
+        int u = 0;
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select count(*)as total from member where member_role='inactif' and member_cellule='sponsoring'");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                u=rs.getInt("total");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return u;
+    }
+    public static int getCountInactifMedia() {
+        int u = 0;
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select count(*)as total from member where member_role='inactif' and member_cellule='media'");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                u=rs.getInt("total");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return u;
+    }
+    public static int getCountActifMembers() {
+        int u = 0;
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select count(*)as total from member where member_role<>'inactif'");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                u=rs.getInt("total");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return u;
+    }
 }

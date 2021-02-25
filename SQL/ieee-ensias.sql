@@ -120,6 +120,36 @@ CREATE TABLE IF NOT EXISTS `task` (
   PRIMARY KEY (`task_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 COMMIT;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contactus`
+--
+
+DROP TABLE IF EXISTS `contactus`;
+CREATE TABLE IF NOT EXISTS `contactus` (
+  `contactus_id` int(11) NOT NULL AUTO_INCREMENT,
+  `contactus_name` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contactus_email` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contactus_subject` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contactus_message` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`contactus_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+COMMIT;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `newsletter`
+--
+
+DROP TABLE IF EXISTS `newsletter`;
+CREATE TABLE IF NOT EXISTS `newsletter` (
+  `newsletter_id` int(11) NOT NULL AUTO_INCREMENT,
+  `newsletter_name` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `newsletter_email` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`newsletter_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

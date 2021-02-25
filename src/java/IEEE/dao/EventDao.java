@@ -126,5 +126,19 @@ public class EventDao {
         }
         return list;
     }
+     public static int getCountEvents() {
+        int u = 0;
+        try {
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select count(*)as total from event");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                u=rs.getInt("total");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return u;
+    }
     
 }

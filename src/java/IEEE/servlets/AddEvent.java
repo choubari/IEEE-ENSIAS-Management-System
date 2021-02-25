@@ -74,7 +74,7 @@ public class AddEvent extends HttpServlet {
             //System.out.println("Hello1");
             MessageFaild = "Please complete all fields";
             request.setAttribute("MessageFaild", MessageFaild);
-            System.out.println("Hello1");
+            //System.out.println("Hello1");
             this.getServletContext().getRequestDispatcher("/ShowEvents").forward(request, response);
             //doGet(request, response);
         }else{
@@ -122,7 +122,7 @@ public class AddEvent extends HttpServlet {
                         if (EventDao.savenew(e)==1){
                             MessageSuccess="Event Successully Inserted";
                             request.setAttribute("MessageSuccess", MessageSuccess);
-                            System.out.println("Hello5");
+                            //System.out.println("Hello5");
                             this.getServletContext().getRequestDispatcher("/ShowEvents").forward(request, response);
                         }else{
                             MessageFaild = "An error occurred, Please Try again!";

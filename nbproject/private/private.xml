@@ -5,20 +5,26 @@
         <group>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/UpdateTask.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/bean/Task.java</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/ChatServlet.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/bean/Newsletter.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/ContactForm.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/loginNavbar.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/ShowTasks.java</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/Inbox.jsp</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/ContactServlet.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/NavbarIndex.jsp</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/ChatDao.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/ContactformDao.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/NewsletterServlet.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/TaskDao.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/EventDao.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/RedirectionServlet.java</file>
-            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/bean/Chat.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/DeleteTask.java</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/Events.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/Navbar.jsp</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/index.jsp</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/MemberDao.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/TaskManagement.jsp</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/web/jsp/contactUs.jsp</file>
             <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/servlets/LogoutServlet.java</file>
+            <file>file:/C:/Users/Admin%20CH/Documents/GitHub/IEEE-ENSIAS/src/java/IEEE/dao/NewsletterDao.java</file>
         </group>
     </open-files>
 </project-private>

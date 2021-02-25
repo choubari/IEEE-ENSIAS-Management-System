@@ -24,7 +24,7 @@
             directly. Our team will come back to you within
             a matter of hours to help you.</p>
 
-        <c:if test="${not empty isInserted}">
+        <c:if test="${not empty MessageSuccess}">
             <h5 class='h5 text-center  mt-4'>
                 <div class='alert alert-success'>Message sent</div>
             </h5>
@@ -34,7 +34,7 @@
 
             <!--Grid column-->
             <div class="col-md-9 mb-md-0 mb-5">
-                <form id="contact-form" name="contact-form" action="contact" method="POST">
+                <form id="contact-form" name="contact-form" action="${pageContext.request.contextPath}/ContactForm" method="POST">
 
                     <!--Grid row-->
                     <div class="row">
@@ -42,8 +42,7 @@
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="name" name="name" class="form-control">
-                                <label for="name" class="">Your name</label>
+                                <input type="text" id="name" name="name" class="form-control"  placeholder="Your name">
                             </div>
                         </div>
                         <!--Grid column-->
@@ -51,8 +50,7 @@
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="email" name="email" class="form-control">
-                                <label for="email" class="">Your email</label>
+                                <input type="text" id="email" name="email" class="form-control"  placeholder="Email">
                             </div>
                         </div>
                         <!--Grid column-->
@@ -64,8 +62,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="md-form mb-0">
-                                <input type="text" id="subject" name="subject" class="form-control">
-                                <label for="subject" class="">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-control"  placeholder="Subject">
                             </div>
                         </div>
                     </div>
@@ -79,8 +76,7 @@
 
                             <div class="md-form">
                                 <textarea type="text" id="message" name="message" rows="2"
-                                          class="form-control md-textarea"></textarea>
-                                <label for="message">Your message</label>
+                                          class="form-control md-textarea"  placeholder="Your message"></textarea>
                             </div>
 
                         </div>
@@ -92,8 +88,8 @@
                     </div>
 
                 </form>
-                <c:if test="${not empty message}">
-                    <div class='alert ${status == 'success' ? 'alert-success' : 'alert-danger'}'>${message}</div>
+                <c:if test="${not empty MessageFaild}">
+                    <div class='alert ${status == 'success' ? 'alert-success' : 'alert-danger'}'>${MessageFaild}</div>
                 </c:if>
                 <div class="status"></div>
             </div>
