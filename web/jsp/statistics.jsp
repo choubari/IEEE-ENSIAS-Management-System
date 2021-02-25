@@ -35,7 +35,7 @@
             BufferedReader reader = new BufferedReader(new FileReader(file));
             StringBuilder sb = new StringBuilder();
             String line = reader.readLine();
-            out.println(line);
+            //out.println(line);
         %>
         <!--- Contenue -->
         <main>

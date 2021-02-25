@@ -53,7 +53,7 @@
                                 <tr>
                                     <th scope="row"><c:out value="${line.id}"/></th>
                                     <th scope="row"><c:out value="${line.name}"/></th>
-                                    <th scope="row"><c:out value="${line.email}"/></th>
+                                    <th scope="row" style="text-decoration: underline;"><a href="mailto:${line.email}"><c:out value="${line.email}"/></a></th>
                                     <th scope="row"><c:out value="${line.subject}"/></th>
                                     <th scope="row"><c:out value="${line.message}"/></th>
                                     <th scope="row">

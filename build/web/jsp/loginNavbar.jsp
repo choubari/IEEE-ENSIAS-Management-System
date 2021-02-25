@@ -38,7 +38,7 @@
                         <a class="nav-link" href="${pageContext.request.contextPath}/ContactForm">Contacts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/ShowNewsletter">Newsletter</a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/NewsletterServlet">Newsletter</a>
                     </li>
                 </c:if>
                 

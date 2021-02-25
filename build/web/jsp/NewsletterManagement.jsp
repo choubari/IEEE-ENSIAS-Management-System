@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="IEEE.bean.ContactForm"%>
+<%@ page import="IEEE.bean.Newsletter"%>
 <%@ page import ="java.util.ArrayList"%>
 <%@ page import ="java.util.List"%>
 
@@ -26,11 +26,11 @@
         <!--- Navbar -->
         <%@ include file="/jsp/loginNavbar.jsp" %>
         <%
-            List<ContactForm> formfillers = (List) request.getAttribute("formfillers");
+            List<Newsletter> newsletterdata = (List) request.getAttribute("newsletterdata");
         %>
         <div class="container col-md-8  pt-5 ">
             <br><br>
-                       
+                       <div class="col-md-3"><a href="${pageContext.request.contextPath}/jsp/SendEmails.jsp" class="btn btn-warning">Send Email</a></div>
             <div class="card card-cascade wider reverse mt-5">
                 <!-- Card content -->
                 <div class="card-body card-body-cascade">
@@ -44,18 +44,14 @@
                                 <th scope="col">Id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Subject</th>
-                                <th scope="col">Message</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach items="${formfillers}" var="line">
+                            <c:forEach items="${newsletterdata}" var="line">
                                 <tr>
                                     <th scope="row"><c:out value="${line.id}"/></th>
                                     <th scope="row"><c:out value="${line.name}"/></th>
                                     <th scope="row" style="text-decoration: underline;"><a href="mailto:${line.email}"><c:out value="${line.email}"/></a></th>
-                                    <th scope="row"><c:out value="${line.subject}"/></th>
-                                    <th scope="row"><c:out value="${line.message}"/></th>
                                     <th scope="row">
                                 </tr>
                             </c:forEach>
