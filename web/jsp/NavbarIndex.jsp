@@ -21,10 +21,10 @@
                     <a class="nav-link" href="">FAQ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Blog</a>
+                    <a class="nav-link" href="https://medium.com/ieee-ensias-student-branch">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">About us</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/jsp/AboutUs.jsp">About us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="jsp/contactUs.jsp">Contact us</a>

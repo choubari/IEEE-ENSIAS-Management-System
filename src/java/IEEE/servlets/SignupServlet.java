@@ -7,8 +7,12 @@ package IEEE.servlets;
 
 import IEEE.bean.Member;
 import IEEE.dao.MemberDao;
+import IEEE.dto.EmailUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -55,6 +59,23 @@ public class SignupServlet extends HttpServlet {
             u.setCell(cell);
             if (MemberDao.save(u) > 0) {
                 isInserted="succes";
+                String host = "smtp.gmail.com";
+                String port = "587";
+                String user = "1email4project@gmail.com";
+                String pass = "1EMAIL4project";
+                String content = "Hello "+firstname+",\n" +
+                        "\n" +
+                        "We have successfully received your request to join us.\n" +
+                        "\n" +
+                        "We will reach you by email in the next few days. \n" +
+                        "\n" +
+                        "Best Regards, \n" +
+                        "IEEE ENSIAS";
+                try {
+                    EmailUtil.sendEmail(host, port, user, pass, email, "We received your request to join us!",content);
+                } catch (MessagingException ex) {
+                    Logger.getLogger(SignupServlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
             } 
             else {
                  isInserted="failure";

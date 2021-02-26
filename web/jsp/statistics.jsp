@@ -51,7 +51,7 @@
                                         </i>
                                     </div>
                                     <div class="media-body text-right">
-                                        <h3 class="text-stat">${counter}</h3>
+                                        <h3 class="text-stat">54</h3>
                                         <span class="text-stat">Visits</span>
                                     </div>
                                 </div>
