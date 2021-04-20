@@ -12,7 +12,7 @@ The main goal of this web app is to manage and organize the work within the IEEE
   <img  src="screenshots/signup.PNG" width="600px" >
 </p>
 
-After Signing up, you will get an immediate confirmation email, and you need to wait until the admin accepts you within the student branch and [updates your status](https://github.com/choubari/IEEE-ENSIAS-Management-System/blob/master/README.md#list-of-members-).
+After Signing up, you will get an immediate confirmation email, and you need to wait until the admin accepts you within the student branch and updates your status. [Go to List of Members section](#list-of-members-).
 
 ### Login :
 
